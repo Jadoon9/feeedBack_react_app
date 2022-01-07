@@ -1,0 +1,24 @@
+import PropTypes from 'prop-types';
+
+const Button = ({ children, type, version, isDisabled }) => {
+  return (
+    <button type={type} className={`btn ${version}`} disabled={isDisabled}>
+      {children}
+    </button>
+  );
+};
+
+Button.defaultProps = {
+  type: 'button',
+  version: 'primary',
+  disabled: false,
+};
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  type: PropTypes.string,
+  version: PropTypes.string,
+  isDisabled: PropTypes.bool,
+};
+
+export default Button;
